@@ -1,5 +1,7 @@
 
-let { menu, printMenu } = require('./food')
+let { menu, printMenu} = require('./food')
+const Food = require("./food/Food")
+const Drink = require("./food/Drink")
 
 console.log ("\n------------------<< Menu >>------------------\n")
 
@@ -21,7 +23,12 @@ function getItem(id){
     let element = false;
      menu.forEach( item =>{ 
             if ( item.id == parseInt(id) )
-                element = item.name + " (" + item.price.value + " " + item.price.currency +  ")";       
+                if (typeof item === 'object' && item !==null) {
+                    if (item instanceof Food)
+                        element = `${item.name} ( ${item.weight.value} ${item.weight.unit}) = ${item.price.value} ${item.price.currency}` ;
+                    else if (item instanceof Drink)
+                        element = `${item.name} ( ${item.volume.value} ${item.volume.unit}) = ${item.price.value} ${item.price.currency}` ; 
+                }                 
         })
     return element;
 }

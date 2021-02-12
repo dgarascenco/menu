@@ -1,11 +1,9 @@
+const Item = require("./Price");
 module.exports = class Item {
-    constructor( id, name, value, currency ) {
+    constructor( id, name, price ) {
         this.id = id;
         this.name = name;
-        this.price = {
-            value: value,
-            currency: currency
-        }
+        this.price = price;
     }
 
     print(){

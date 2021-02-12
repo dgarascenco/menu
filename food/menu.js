@@ -1,8 +1,10 @@
-///   this module DEPENDS on Item
-const Item = require("./Item")
+const Drink = require("./Drink")
+const Food = require("./Food")
+const Price = require("./Price")
+const Measurement = require("./physical")
 
 module.exports.menu = [
-    new Item(1, "Salad", 15.00, "MDL"),
-    new Item(25, "Soup", 25.00, "MDL"),
-    new Item(3, "Bread оро рор", 5.00, "MDL")
+    new Food(1, "Salad", new Price(15.00, "MDL"), new  Measurement(0.3,"Kg")),
+    new Drink(25, "Soup", new Price(25.00, "MDL"), new Measurement(0.5,"L")),
+    new Food(3, "Bread оро рор",new Price(5.00, "MDL"), new  Measurement(50,"g"))
 ]
