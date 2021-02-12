@@ -1,7 +1,7 @@
 const Drink = require("./Drink")
 const Food = require("./Food")
 const Price = require("./Price")
-const Measurement = require("./physical")
+const Measurement = require("../physical/Measurement")
 
 module.exports.menu = [
     new Food(1, "Salad", new Price(15.00, "MDL"), new  Measurement(0.3,"Kg")),
