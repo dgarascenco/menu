@@ -1,5 +1,5 @@
-module.exports.menu = require("./menu").menu
-let helpers = require("./helpers")
+////////////
+const fs = require('fs');
+let dir = fs.readdirSync('./food'); 
+dir.filter(file => !file.endsWith('.json') && file != 'index.js').map( file => module.exports[file.split('.')[0]] = require( `./${file}`)  ) 
 
-module.exports.printMenu = helpers.printMenu
-module.exports.printMessage = helpers.printMessage

@@ -6,9 +6,11 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-module.exports.printMenu = ( menu, cb ) => {   
+module.exports.printMenu = ( menu, cb ) => { 
     menu.forEach( element => console.log(element.print()) );
     rl.question("Choose >>", (option)=>{
         cb( option );
     });
 }
+
+
